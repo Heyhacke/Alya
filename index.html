@@ -1,22 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alyasseri | Quantum Digital Architect</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hakim Alyasseri</title>
+  <style>
+    :root {
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --text: #111;
+      --link: #007aff;
+      --bg: #fff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+      padding: 80px 20px;
+    }
+
+    main {
+      max-width: 600px;
+      margin-left: 10vw;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5em;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .indicator {
+      position: fixed;
+      top: 0;
+      right: 20px;
+      width: 8px;
+      height: 8px;
+      background: var(--link);
+      border-radius: 50%;
+      opacity: 0.6;
+      transition: transform 0.2s ease;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 60px 16px;
+      }
+
+      main {
+        margin-left: 0;
+      }
+
+      .indicator {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="root"></div>
-    <div id="cursor-follower"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-    <script type="text/babel" src="app.js"></script>
+
+  <div class="indicator" id="indicator"></div>
+
+  <main>
+    <h1>Hello.</h1>
+    <h2>My name is Hakim Alyasseri.</h2>
+
+    <p>
+      I build at the intersection of technology, law, and strategy. Currently based in Europe, I work with early-stage companies and high-leverage individuals across AI, security, and product innovation.
+    </p>
+
+    <p>
+      My background spans multiple domains—from developing technical solutions to advising on complex strategic challenges. I’ve spent years working behind the scenes, solving problems that don’t always make headlines — but often change outcomes. My approach is methodical and impact-driven, with a focus on turning complex ideas into functional systems.
+    </p>
+
+    <p>
+      Beyond tech, I’ve advised startups across industries, run a café, and travelled widely to better understand how culture, structure, and people intersect. These experiences shape how I think, lead, and build — grounded in context, driven by clarity.
+    </p>
+
+    <p>
+      Right now, I’m developing a stealth-mode marketplace with a focused team. Most of my work is pragmatic, structured, and outcome-oriented.
+    </p>
+
+    <p>
+      You can reach me via <a href="mailto:hakim@email.com">email</a>, <a href="#">LinkedIn</a>, or <a href="#">GitHub</a>. I’m always open to meaningful conversations about technology, infrastructure, and interface design.
+    </p>
+
+    <p>
+      Outside of work, I follow geopolitical shifts, explore emerging digital infrastructure, and think about how systems can be made more intuitive — and more humane.
+    </p>
+  </main>
+
+  <script>
+    const indicator = document.getElementById('indicator');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const percent = scrollY / docHeight;
+      const y = percent * window.innerHeight;
+      indicator.style.transform = `translateY(${y}px)`;
+    });
+  </script>
+
 </body>
 </html>
